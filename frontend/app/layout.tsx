@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import { Google_Sans_Flex } from "next/font/google";
+import { Story_Script } from "next/font/google";
 import "./globals.css";
 
 const google_sans = Google_Sans_Flex({
   variable: "--font-google-sans-flex",
   subsets: ["latin"],
 });
+
+const story_script = Story_Script({
+  variable: "--font-story-script",
+  weight: "400",
+  subsets: ["latin"],
+});
+
 
 
 export const metadata: Metadata = {
@@ -17,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${google_sans.variable} h-full antialiased`}
+      className={`${google_sans.variable} h-full antialiased ${story_script.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
